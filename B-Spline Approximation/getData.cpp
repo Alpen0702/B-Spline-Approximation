@@ -9,7 +9,7 @@ B_Spline* getData()
 	B_Spline* B_Spline_Pointer = new B_Spline;
 	while (1)
 	{
-		// 输入控制顶点数
+		// 输入控制顶点数-1
 		printf("Please type in h (sum of the control points - 1). Press Enter to continue.\n");
 		scanf("%d", &B_Spline_Pointer->h);
 		printf("Got h = %d\n", B_Spline_Pointer->h);
@@ -17,7 +17,7 @@ B_Spline* getData()
 		printf("Please type in p (degree of the B-Spline). Press Enter to continue.\n");
 		scanf("%d", &B_Spline_Pointer->p);
 		printf("Got p = %d\n", B_Spline_Pointer->p);
-		// 输入给定数据点数
+		// 输入给定数据点数-1
 		printf("Please type in n (sum of the given data points - 1). Press Enter to continue.\n");
 		scanf("%d", &B_Spline_Pointer->n);
 		printf("Got n = %d\n", B_Spline_Pointer->n);
