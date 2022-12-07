@@ -16,39 +16,26 @@
 在图形界面中，蓝色的方形是给定数据点，绿色的方形是控制顶点，红色粗线是B样条曲线，橙色圆点是给定数据点在样条曲线上对应参数的点，橙色细线将这些点与对应的给定数据点相连。**需要注意的是，在样条曲线的起点与终点处，蓝色方形、绿色方形与橙色圆点是重合的。这是因为拟合方法确定了首末的给定数据点与控制顶点重合，且与对应参数点也重合。**<br><br>
 ## 讨论
 我们对两种距离模式造成拟合曲线的差异进行讨论。在定义上，代数距离模式是最小化给定数据点集到曲线上对应参数点集的距离，而几何距离模式则是最小化给定数据点集到曲线的直线距离。因此，几何距离会明显小于代数距离。在实际测试中也是如此，在几何距离模式下，蓝色点总是与曲线贴得很紧密，且它们与曲线上对应参数点集的连线总是垂直于该处的切线；相比之下，代数距离模式中蓝色点就可能与曲线距离远得多，且这一现象在控制顶点数量少、曲线次数低的情况下尤其明显。<br><br>
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="这里输入图片地址">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">左图</div>
-     <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="这里输入图片地址">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">右图</div>
+<center class="half">
+    <img src="https://github.com/Alpen0702/B-Spline-Approximation/blob/master/resources/pre_al.png" width="200"/>
+    <img src="https://github.com/Alpen0702/B-Spline-Approximation/blob/master/resources/pre_geo.png" width="200"/>
 </center>
 如上图，注意看，其实两张图中给定数据点（蓝色方形）相对位置是基本一致的，只是为了显示控制顶点而缩小了右图而已。但两条曲线的形状截然不同。几何距离模式下的拟合效果要好得多，但也使得这条曲线过分地扭曲，以至于把控制顶点挤压到很远的位置。<br><br>
 另外，几何距离模式下的曲线容易产生突变，很微小的顶点拖动可能会带来很明显的形状变化，从而导致较强的不稳定性。就我而言，代数距离模式对顶点移动的反馈更缓和，更符合直觉的判断；而几何距离模式使人难以判断顶点拖动带来的变化，曲线的变化速度也更为剧烈，这是对交互设计不友好的。<br><br>
+
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="这里输入图片地址">
+    src="https://github.com/Alpen0702/B-Spline-Approximation/blob/master/resources/al.gif">
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://github.com/Alpen0702/B-Spline-Approximation/blob/master/resources/geo.gif">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">左图</div>
-     <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="这里输入图片地址">
-    <br>
+     
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
