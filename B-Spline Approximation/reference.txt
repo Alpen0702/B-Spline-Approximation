@@ -1,0 +1,6 @@
+[1] 矩阵的LU分解
+https://blog.csdn.net/qq_40688707/article/details/89256737
+[2] B样条曲线拟合
+https://pages.mtu.edu/~shene/COURSES/cs3621/NOTES/INT-APP/CURVE-APP-global.html
+[3] 迭代法求几何拟合解
+基于迭代最近点的B样条曲线拟合方法研究. 中国图象图形学报. 肖轶军,丁明跃,彭嘉雄. 2000(005)007
