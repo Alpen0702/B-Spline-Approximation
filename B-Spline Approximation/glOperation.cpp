@@ -5,8 +5,8 @@
 #include <cstdio>
 
 B_Spline* drawn_B_Spline_pointer;
-GLint windowSizeX = 1024;
-GLint windowSizeY = 1024;
+GLint windowSizeX = 720;
+GLint windowSizeY = 720;
 GLfloat cameraX = 0.0;
 GLfloat cameraY = 0.0;
 GLfloat cameraZ = 1.0;

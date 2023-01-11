@@ -42,4 +42,8 @@
   <ItemGroup>
     <Text Include="reference.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\B-Spline Approximation.exe" />
+    <None Include="..\freeglutd.dll" />
+  </ItemGroup>
 </Project>
